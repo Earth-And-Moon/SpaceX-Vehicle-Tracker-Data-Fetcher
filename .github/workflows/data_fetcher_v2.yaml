@@ -1,0 +1,31 @@
+name: Data Fetcher
+on:
+  #schedule:
+  #  - cron: '0 * * * *' # Startet jede Stunde zur Minute 0
+  workflow_dispatch: # Erlaubt es Ihnen, den Logger sofort manuell zu starten
+
+jobs:
+  log_data:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Install Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Install dependencies
+      run: pip install requests
+
+    - name: Run script
+      run: python script.py
+
+    - name: Push data file
+      run: |
+        git config --global user.name "Data-Logger-Bot"
+        git config --global user.email "bot@github.com"
+        git add data/data.txt
+        git commit -m "Data update" || exit 0
+        git push
