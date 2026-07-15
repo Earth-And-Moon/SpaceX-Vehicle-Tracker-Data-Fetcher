@@ -3,6 +3,7 @@ on:
   schedule:
     - cron: '0.16666666666666666666666666666667 * * * *' # Läuft alle 5 Minuten rund um die Uhr
 
+
 jobs:
   build:
     runs-on: ubuntu-latest
