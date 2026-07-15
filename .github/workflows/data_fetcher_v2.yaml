@@ -1,6 +1,6 @@
 name: Data Fetcher
 on:
-  #schedule:
+  schedule:
     - cron: '*/5 * * * *'
   workflow_dispatch:
 
