@@ -1,4 +1,4 @@
-name: Data Fetcher V2
+name: Data Fetcher V3
 permissions:
   contents: write
 on:
