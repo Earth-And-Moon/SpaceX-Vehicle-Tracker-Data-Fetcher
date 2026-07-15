@@ -1,10 +1,13 @@
 name: Data Fetcher V3
+
 permissions:
   contents: write
+
 on:
+  workflow_dispatch:
   schedule:
     - cron: '*/5 * * * *'
-  #workflow_dispatch:
+
 
 jobs:
   log_data:
