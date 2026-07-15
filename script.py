@@ -3,7 +3,7 @@ url = "https://sxcontent9668.azureedge.us/cms-assets/starship_tracker_public.jso
 tgt = "data/data.txt"
 
 run_every = 10.0	# sec	1
-log_every = 600.0	# sec	3
+log_every = 30.0	# sec	3
 
 run_for = 295		# end script after x sec	10
 
