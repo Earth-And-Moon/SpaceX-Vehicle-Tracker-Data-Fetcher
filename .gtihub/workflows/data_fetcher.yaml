@@ -1,0 +1,25 @@
+name: Data Logger Bot
+on:
+  schedule:
+    - cron: '0.16666666666666666666666666666667 * * * *' # Läuft alle 5 Minuten rund um die Uhr
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    #- name: Code auschecken
+    #  uses: actions/checkout@v3
+
+    - name: API abfragen und loggen
+      run: |
+        DATA=$(curl -s "https://sxcontent9668.azureedge.us/cms-assets/starship_tracker_public.json")
+        TIMESTAMP=$(date +"%Y-%m-%d %H:%M:%S")
+        echo "$TIMESTAMP - $DATA" >> data/data.txt
+
+    - name: Textdatei zurück ins Repository pushen
+      run: |
+        git config --global user.name "Data-Logger-Bot"
+        git config --global user.email "bot@github.com"
+        git add data/data.txt
+        git commit -m "Log-Update: $(date)" || exit 0
+        git push
