@@ -1,8 +1,8 @@
 name: Data Fetcher
 on:
   #schedule:
-  #  - cron: '0 * * * *' # Startet jede Stunde zur Minute 0
-  workflow_dispatch: # Erlaubt es Ihnen, den Logger sofort manuell zu starten
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
 
 jobs:
   log_data:
