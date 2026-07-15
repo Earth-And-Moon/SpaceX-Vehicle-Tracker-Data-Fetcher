@@ -1,4 +1,6 @@
 name: Data Fetcher
+permissions:
+  contents: write
 on:
   schedule:
     - cron: '*/5 * * * *'
