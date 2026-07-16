@@ -5,7 +5,8 @@ tgt = "data/data.txt"
 run_every = 10.0	# sec	1
 log_every = 30.0	# sec	3
 
-run_for = 28800		# end script after x sec	10	295
+# 5h, 6h is limit
+run_for = 18000		#28800		# end script after x sec	10	295
 
 
 def do_it():
