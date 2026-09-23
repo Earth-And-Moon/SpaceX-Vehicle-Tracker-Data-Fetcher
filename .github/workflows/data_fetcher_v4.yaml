@@ -1,15 +1,18 @@
-name: Data Fetcher V3
+name: Data Fetcher V4
+
+on:
+  workflow_dispatch:
 
 permissions:
   contents: write
 
-on:
-  workflow_dispatch:
-  #schedule:
-  #  - cron: '0 */2 * * *'
-
-
 jobs:
+  pause-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait 900 seconds
+        run: sleep 900
+
   log_data:
     runs-on: ubuntu-latest
     steps:
