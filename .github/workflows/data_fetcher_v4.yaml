@@ -9,9 +9,12 @@ permissions:
 jobs:
   pause-job:
     runs-on: ubuntu-latest
+    environment: 
+      name: wait-900
+      deployment: false
     steps:
-      - name: Wait 900 seconds
-        run: sleep 900
+      - name: Wait time end
+        run: echo "End of waiting. Beginning logging."
 
   log_data:
     needs:
