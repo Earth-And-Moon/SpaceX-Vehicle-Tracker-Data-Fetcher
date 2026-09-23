@@ -9,8 +9,8 @@ permissions:
 jobs:
   pause-job:
     runs-on: ubuntu-latest
-    environment: 
-      name: wait-60
+    environment:
+      name: wait-1140
       deployment: false
     steps:
       - name: Wait time end
