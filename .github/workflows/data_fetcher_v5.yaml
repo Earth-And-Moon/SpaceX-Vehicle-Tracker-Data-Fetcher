@@ -49,7 +49,6 @@ jobs:
         git pull
         git add data/data.txt
         git commit -m "Data update" || exit 0
-        git push
         git merge
         git push
 
