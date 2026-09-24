@@ -1,4 +1,4 @@
-name: Data Fetcher V4
+name: Data Fetcher V5
 
 on:
   workflow_dispatch:
@@ -33,13 +33,37 @@ jobs:
     - name: Install dependencies
       run: pip install requests
 
-    - name: Run script
-      run: python script.py
-
-    - name: Push data file
+    - name: Initialize stuff
       run: |
         git config --global user.name "Data-Logger-Bot"
         git config --global user.email "bot@github.com"
+
+      # First run
+
+    - name: Run script (1)
+      run: python script.py
+
+    - name: Push data file (1)
+      run: |
         git add data/data.txt
         git commit -m "Data update" || exit 0
         git push
+
+
+      # Second run
+
+    - name: Run script (2)
+      run: python script.py
+
+    - name: Push data file (2)
+      run: |
+        git add data/data.txt
+        git commit -m "Data update" || exit 0
+        git push
+
+
+
+
+
+
+
