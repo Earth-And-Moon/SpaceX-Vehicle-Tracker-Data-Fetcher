@@ -10,7 +10,7 @@ jobs:
   pause-job:
     runs-on: ubuntu-latest
     environment:
-      name: wait-180
+      name: wait-60
       deployment: false
     steps:
       - name: Wait time end
