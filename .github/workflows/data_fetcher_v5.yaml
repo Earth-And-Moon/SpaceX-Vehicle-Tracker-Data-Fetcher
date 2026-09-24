@@ -19,8 +19,11 @@ jobs:
   log_data:
     needs:
       pause-job
-
     runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 1 # Erzwingt, dass immer nur ein Job gleichzeitig läuft
+      matrix:
+        run_number: [1, 2, 3, 4, 5]
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
@@ -38,32 +41,14 @@ jobs:
         git config --global user.name "Data-Logger-Bot"
         git config --global user.email "bot@github.com"
 
-      # First run
-
-    - name: Run script (1)
+    - name: Run script
       run: python script.py
 
-    - name: Push data file (1)
+    - name: Push data file
       run: |
         git add data/data.txt
         git commit -m "Data update" || exit 0
         git push
-
-
-      # Second run
-
-    - name: Run script (2)
-      run: python script.py
-
-    - name: Push data file (2)
-      run: |
-        git add data/data.txt
-        git commit -m "Data update" || exit 0
-        git push
-
-
-
-
 
 
 
