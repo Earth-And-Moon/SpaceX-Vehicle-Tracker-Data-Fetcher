@@ -21,9 +21,9 @@ jobs:
       pause-job
     runs-on: ubuntu-latest
     strategy:
-      max-parallel: 1 # Erzwingt, dass immer nur ein Job gleichzeitig läuft
+      max-parallel: 1
       matrix:
-        run_number: [1, 2, 3, 4, 5]
+        run_number: [1, 2]
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
