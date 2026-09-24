@@ -41,14 +41,15 @@ jobs:
         git config --global user.name "Data-Logger-Bot"
         git config --global user.email "bot@github.com"
 
+    - name: Load previous state
+      run: |
+        git pull origin main
+
     - name: Run script
       run: python script.py
 
     - name: Push data file
       run: |
-        mv data/data.txt data/data.txt.tmp
-        git pull origin main
-        mv data/data.txt.tmp data/data.txt
         git add data/data.txt
         git commit -m "Data update"
         git push origin main
