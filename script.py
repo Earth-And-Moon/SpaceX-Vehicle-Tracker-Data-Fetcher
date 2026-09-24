@@ -6,7 +6,7 @@ run_every = 10.0-1.0	# sec	1
 log_every = 30.0	# sec	3
 
 # 5h 50 mins, 6h is limit
-run_for = 210 #000 #18000	#21000		#18000		#28800		# end script after x sec	10	295
+run_for = 60 #210 #000 #18000	#21000		#18000		#28800		# end script after x sec	10	295
 
 
 def do_it():
