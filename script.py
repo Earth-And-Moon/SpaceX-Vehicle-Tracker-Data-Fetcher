@@ -2,7 +2,7 @@ import requests, time
 url = "https://sxcontent9668.azureedge.us/cms-assets/starship_tracker_public.json"
 tgt = "data/data.txt"
 
-run_every = 10.0	# sec	1
+run_every = 10.0-1.0	# sec	1
 log_every = 30.0	# sec	3
 
 # 5h 50 mins, 6h is limit
@@ -41,14 +41,19 @@ def log(data):
 def main():
 	t = time.time()
 
-	while time.time() < t + run_for:	#True:
+	#last_text = ""
+
+	while time.time() <= t + run_for:	#True:
 		text = ""
 
 		t_loop_start = time.time()
 
 		while time.time() <= t_loop_start + log_every:
 			print("run")
-			text += do_it()
+			new_text = do_it()
+			#if new_text != last_text:
+			#	text += do_it()
+			text += new_text
 			text += "\n--\n"
 			time.sleep(run_every)
 
