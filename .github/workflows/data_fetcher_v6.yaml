@@ -1,4 +1,4 @@
-name: Data Fetcher V5
+name: Data Fetcher V6
 
 on:
   workflow_dispatch:
@@ -23,7 +23,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        run_number: [1, 2]
+        run_number: [1, 2, 3, 4]
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
