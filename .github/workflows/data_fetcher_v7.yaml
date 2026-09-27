@@ -1,4 +1,4 @@
-name: Data Fetcher V6
+name: Data Fetcher V7 (Flight 14)
 
 on:
   workflow_dispatch:
@@ -50,7 +50,7 @@ jobs:
 
     - name: Push data file
       run: |
-        git add data/data.txt
+        git add data/data-flight-14.txt
         git commit -m "Data update"
         git push origin main
 
