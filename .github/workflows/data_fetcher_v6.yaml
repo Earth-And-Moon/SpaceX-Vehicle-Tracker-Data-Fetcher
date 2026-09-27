@@ -10,7 +10,7 @@ jobs:
   pause-job:
     runs-on: ubuntu-latest
     environment:
-      name: wait-60
+      name: wait-1140
       deployment: false
     steps:
       - name: Wait time end
@@ -23,7 +23,7 @@ jobs:
     strategy:
       max-parallel: 1
       matrix:
-        run_number: [1, 2, 3, 4]
+        run_number: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
