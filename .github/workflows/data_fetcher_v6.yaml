@@ -38,7 +38,7 @@ jobs:
 
     - name: Initialize stuff
       run: |
-        git config --global user.name "Data-Logger-Bot"
+        git config --global user.name "Data Fetcher"
         git config --global user.email "bot@github.com"
 
     - name: Load previous state
