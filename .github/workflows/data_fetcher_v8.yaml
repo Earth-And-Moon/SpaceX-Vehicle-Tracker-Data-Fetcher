@@ -50,7 +50,7 @@ jobs:
 
     - name: Push data file
       run: |
-        git add data/data-flight-14.txt
+        git add data/data-flight-15.txt
         git commit -m "Data update"
         git push origin main
 
