@@ -1,4 +1,4 @@
-name: Data Fetcher V8 (Flight 15)
+name: Data Fetcher V8b (Flight 15 Reentry)
 
 on:
   workflow_dispatch:
