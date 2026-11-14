@@ -1,6 +1,7 @@
 import requests, time
-url = "https://sxcontent9668.azureedge.us/cms-assets/starship_tracker_public.json"
-tgt = "data/data-flight-15.txt"
+#url = "https://sxcontent9668.azureedge.us/cms-assets/starship_tracker_public.json"
+url = "https://sxcontent9668.blob.core.usgovcloudapi.net/cms-assets/starship_tracker_public.json"
+tgt = "data/data-flight-15b.txt"
 
 run_every = 10.0-1.0	# sec	1
 log_every = 30.0	# sec	3
